@@ -11,14 +11,14 @@ Various Information in Minibuffer Prompt
 Overview
 --------
 
-Enable global major-mode `prompt-text-mode` to print additional information
+Enable global minor-mode `prompt-text-mode` to print additional information
 always when Emacs asks you something via minibuffer.
 
-By default the text includes your login name, hostname, current working
+By default the text includes your login name, hostname and current working
 directory.
 For example, when you type `M-x`, Emacs will give you a prompt like:
 
-    10sr@mba0:~/prompt-text-el M-x
+    10sr@mbp0:~/prompt-text-el M-x
 
 You can configure `prompt-text-format` to change the text to print.
 This value will be formatted with `format-mode-line`: see docstring of
