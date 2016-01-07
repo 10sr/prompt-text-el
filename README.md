@@ -28,4 +28,4 @@ This value will be formatted with `format-mode-line`: see docstring of
 License
 -------
 
-This software is unlicensed.
+This software is released under Unlicense.
