@@ -1,3 +1,7 @@
+[![MELPA](http://melpa.org/packages/prompt-text-badge.svg)](http://melpa.org/#/prompt-text)
+[![MELPA Stable](http://stable.melpa.org/packages/prompt-text-badge.svg)](http://stable.melpa.org/#/prompt-text)
+
+
 prompt-text-el
 ================
 
