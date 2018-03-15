@@ -67,20 +67,24 @@ The value should be in the mode-line format: see `mode-line-fomat' for details."
   :group 'prompt-text
   :type 'sexp)
 
+(defvar prompt-text--already
+  nil
+  "Set to non-nil when the test already added.")
+
 (defmacro prompt-text--defadvice (&rest functions)
   "Set prompt-text advices for FUNCTIONS."
   `(progn
      ,@(mapcar (lambda (f)
-                 `(defadvice ,f (before prompt-text-modify)
+                 `(defadvice ,f (around prompt-text-modify)
                     "Show info in prompt."
-                    (let ((orig (ad-get-arg 0))
-                          (str (format-mode-line prompt-text-format)))
-                      (unless (string-match-p (concat "^"
-                                                      (regexp-quote str))
-                                              orig)
+                    (unless prompt-text--already
+                      (let ((orig (ad-get-arg 0))
+                            (str (format-mode-line prompt-text-format)))
                         (ad-set-arg 0
                                     (concat str
-                                            orig))))))
+                                            orig))))
+                    (let ((prompt-text--already t))
+                      ad-do-it)))
                functions)))
 
 (prompt-text--defadvice read-from-minibuffer
@@ -95,8 +99,8 @@ Set `prompt-text-format' to configure what text to print."
   :global t
   :lighter ""
   (if prompt-text-mode
-      (ad-activate-regexp "^prompt-text-modify$")
-    (ad-deactivate-regexp "^prompt-text-modify$")))
+      (ad-activate-regexp "\\`prompt-text-modify\\'")
+    (ad-deactivate-regexp "\\`prompt-text-modify\\'")))
 
 (provide 'prompt-text)
 
