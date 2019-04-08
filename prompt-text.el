@@ -1,4 +1,4 @@
-;;; prompt-text.el --- Various information in minibuffer prompt
+;;; prompt-text.el --- Configure your minibuffer prompt
 
 ;; Author: 10sr <8slashes+el [at] gmail [dot] com>
 ;; URL: https://github.com/10sr/prompt-text-el
@@ -34,8 +34,8 @@
 
 ;;; Commentary:
 
-;; Enable global minor-mode `prompt-text-mode` to print additional information
-;; always when Emacs asks you something via minibuffer.
+;; `prompt-text` provides a feature to print additional information
+;; always when Emacs asks you something in minibuffer.
 
 ;; By default the text includes your login name, hostname and current working
 ;; directory.
@@ -43,7 +43,9 @@
 
 ;;     10sr@mbp0:~/prompt-text-el M-x
 
-;; You can configure `prompt-text-format` to change the text to print.
+;; Enable global minor-mode `prompt-text-mode` to start using.
+
+;; You can set `prompt-text-format` to change the text to print.
 ;; This value will be formatted with `format-mode-line`: see docstring of
 ;; `mode-line-format` for available expressions.
 
