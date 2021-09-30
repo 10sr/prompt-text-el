@@ -1,3 +1,4 @@
+[![CI](https://github.com/10sr/prompt-text-el/actions/workflows/main.yml/badge.svg)](https://github.com/10sr/prompt-text-el/actions/workflows/main.yml)
 [![MELPA](http://melpa.org/packages/prompt-text-badge.svg)](http://melpa.org/#/prompt-text)
 [![MELPA Stable](http://stable.melpa.org/packages/prompt-text-badge.svg)](http://stable.melpa.org/#/prompt-text)
 
